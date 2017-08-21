@@ -1,0 +1,37 @@
+.asyncsearch.wave {
+    display: none;
+    height: 1em;
+    position: relative;
+
+    .loader {
+        height: 100%;
+
+        &:after {
+            content: '';
+            clear: left;
+        }
+    }
+    
+    div.line {
+        float: left;
+        margin: 0 2px 0 0;
+        width: 2px;
+        height: 100%;
+        background-color: @ini_existing;
+        animation: wave 1s cubic-bezier(0.2, 0.68, 0.18, 1.08) infinite;
+        transform: scaleY(0.5);
+    }
+    
+    &.show {
+        display: inline-block;
+    }
+}
+
+@keyframes wave {
+    0%,100% {
+        transform: scaleY(0.5);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}
