@@ -5,21 +5,32 @@
 
     (function(_) {
 
-        _.addProvider = function( name, resultHandler ) {
+        _.addProvider = function( name, resultHandler, params ) {
             resultHandlers.push( {
-                'name': name,
-                'handler': resultHandler
+                'provider': name,
+                'handler': resultHandler,
+                'params': params
             });
         };
 
         _.executeSearch = function() {
             var searchPlugin = this;
+
+            // If the provider is a function, it will handle stuff for us
+            if ( typeof searchPlugin.provider == 'function' ) {
+                searchPlugin.provider.call( $('#asyncsearch'), $('#asyncsearch').data('term'), function() {
+                    _.start();
+                } );
+                return;
+            } 
+
             $.post( DOKU_BASE + '/lib/exe/ajax.php', {
                 'call': 'asyncsearch',
-                'pluginID': searchPlugin.name,
+                'pluginID': searchPlugin.provider,
                 'term': $('#asyncsearch').data('term')
             } ).success( function( data ) {
                 searchPlugin.handler.call( $('#asyncsearch'), data);
+                $('<hr/>').appendTo( $('#asyncsearch') );
                 _.start();
             } );
         };
