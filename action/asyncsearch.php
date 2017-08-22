@@ -110,6 +110,7 @@ class action_plugin_asyncsearch_asyncsearch extends DokuWiki_Action_Plugin {
 
         if ( $INPUT->str('type') === 'asyncsearch' ) {
             $event->data = $this->js_pluginscripts();
+            sort($event->data);
         }
     }
 
