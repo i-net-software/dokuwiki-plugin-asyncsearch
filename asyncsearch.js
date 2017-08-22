@@ -18,9 +18,7 @@
 
             // If the provider is a function, it will handle stuff for us
             if ( typeof searchPlugin.provider == 'function' ) {
-                searchPlugin.provider.call( $('#asyncsearch'), $('#asyncsearch').data('term'), function() {
-                    _.start();
-                } );
+                searchPlugin.provider.call( $('#asyncsearch'), $('#asyncsearch').data('term'), _.start);
                 return;
             } 
 
