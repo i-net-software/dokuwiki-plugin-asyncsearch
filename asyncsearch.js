@@ -22,7 +22,7 @@
                 return;
             } 
 
-            $.post( DOKU_BASE + '/lib/exe/ajax.php', {
+            $.post( DOKU_BASE + 'lib/exe/ajax.php', {
                 'call': 'asyncsearch',
                 'pluginID': searchPlugin.provider,
                 'term': $('#asyncsearch').data('term')
