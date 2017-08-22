@@ -37,7 +37,8 @@ class action_plugin_asyncsearch_asyncsearch extends DokuWiki_Action_Plugin {
         global $ACT;
         global $QUERY;
 
-        if ( $event->data === 'search' && !empty( cleanID( $QUERY ) ) ) {
+        $QUERY = cleanID( $QUERY );
+        if ( $event->data === 'search' && !empty( $QUERY ) ) {
             $ACT = 'asyncsearch';
             $event->preventDefault();
             return false;
@@ -92,7 +93,7 @@ class action_plugin_asyncsearch_asyncsearch extends DokuWiki_Action_Plugin {
 
         $event->data['script'][] = array(
             'type'=> 'text/javascript', 'charset'=> 'utf-8', '_data'=> '',
-            'src' => DOKU_BASE.'lib/exe/js.php'.'?&type=asyncsearch&tseed='.$tseed
+            'src' => DOKU_BASE.'lib/exe/js.php'.'?type=asyncsearch&tseed='.$tseed
         );
     }
 
