@@ -28,7 +28,6 @@
                 'term': $('#asyncsearch').data('term')
             } ).success( function( data ) {
                 searchPlugin.handler.call( $('#asyncsearch'), data);
-                $('<hr/>').appendTo( $('#asyncsearch') );
                 _.start();
             } );
         };
@@ -36,6 +35,7 @@
         _.start = function() {
             if ( resultHandlers.length > 0 ) {
                 $('.asyncsearch.wave').addClass('show');
+                $('<hr/>').appendTo( $('#asyncsearch') );
                 _.executeSearch.call( resultHandlers.shift() );
             } else {
                 window.setTimeout( function() {
