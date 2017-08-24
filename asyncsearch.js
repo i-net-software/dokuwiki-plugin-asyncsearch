@@ -67,10 +67,14 @@
 
 /** Provider for the QuickPages Search **/
 jQuery.asyncsearch.addProvider( 'pagelookup', function( data ){
-    jQuery('<div></div>').html(data).appendTo(this);
+    if ( data.length > 0 ) {
+        jQuery('<div></div>').html(data).appendTo(this);
+    }
 });
 
 /** Provider for the Page Search **/
 jQuery.asyncsearch.addProvider( 'pagesearch', function( data ){
-    jQuery('<div></div>').html(data).appendTo(this);
+    if ( data.length > 0 ) {
+        jQuery('<div></div>').html(data).appendTo(this);
+    }
 });
