@@ -37,7 +37,6 @@ class action_plugin_asyncsearch_asyncsearch extends DokuWiki_Action_Plugin {
         global $ACT;
         global $QUERY;
 
-        $QUERY = cleanID( $QUERY );
         if ( $event->data === 'search' && !empty( $QUERY ) ) {
             $ACT = 'asyncsearch';
             $event->preventDefault();
