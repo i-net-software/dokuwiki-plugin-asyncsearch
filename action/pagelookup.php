@@ -29,7 +29,7 @@ class action_plugin_asyncsearch_pagelookup extends DokuWiki_Action_Plugin {
      *                           handler was registered]
      * @return void
      */
-    public function handle_ajax_call_unknown(Doku_Event &$event, $param) {
+    public function handle_ajax_call_unknown( Doku_Event &$event, $param) {
         global $ACT, $INPUT;
 
         if ( $event->data === 'asyncsearch' && $INPUT->str('pluginID') == 'pagelookup' ) {

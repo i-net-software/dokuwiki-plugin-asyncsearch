@@ -33,7 +33,7 @@ class action_plugin_asyncsearch_asyncsearch extends DokuWiki_Action_Plugin {
      * @return void
      */
 
-    public function handle_action_act_preprocess(Doku_Event &$event, $param) {
+    public function handle_action_act_preprocess( Doku_Event &$event, $param) {
         global $ACT;
         global $QUERY;
 
@@ -53,7 +53,7 @@ class action_plugin_asyncsearch_asyncsearch extends DokuWiki_Action_Plugin {
      * @return void
      */
 
-    public function handle_action_tpl_act_renderer(Doku_Event &$event, $param) {
+    public function handle_action_tpl_act_renderer( Doku_Event &$event, $param) {
         global $ACT, $QUERY, $ID;
         global $lang;
         
@@ -84,7 +84,7 @@ class action_plugin_asyncsearch_asyncsearch extends DokuWiki_Action_Plugin {
      *                           handler was registered]
      * @return void
      */
-    public function handle_tpl_metaheader_output(Doku_Event &$event, $param) {
+    public function handle_tpl_metaheader_output( Doku_Event &$event, $param) {
         global $ACT;
         
         // add script if user has better auth than AUTH_EDIT
@@ -105,7 +105,7 @@ class action_plugin_asyncsearch_asyncsearch extends DokuWiki_Action_Plugin {
      *                           handler was registered]
      * @return void
      */
-    public function handle_js_script_list(Doku_Event &$event, $param) {
+    public function handle_js_script_list( Doku_Event &$event, $param) {
         global $INPUT;
 
         if ( $INPUT->str('type') === 'asyncsearch' ) {
