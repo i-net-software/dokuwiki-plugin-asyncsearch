@@ -91,7 +91,7 @@ class action_plugin_asyncsearch_asyncsearch extends DokuWiki_Action_Plugin {
         if ( $ACT !== 'asyncsearch' ) {  return; }
 
         $event->data['script'][] = array(
-            'type'=> 'text/javascript', 'charset'=> 'utf-8', '_data'=> '',
+            'type'=> 'text/javascript', 'charset'=> 'utf-8', '_data'=> '', 'defer'=> 'defer',
             'src' => DOKU_BASE.'lib/exe/js.php'.'?type=asyncsearch&tseed='.$tseed
         );
     }
