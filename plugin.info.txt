@@ -1,7 +1,7 @@
 base   asyncsearch
 author i-net software / Gerry Weißbach
 email  tools@inetsoftware.de
-date   2017-11-29
+date   2021-12-20
 name   asyncsearch plugin
 desc   Overrides the default search page and does the search asynchronously in the back.
 url    https://github.com/i-net-software/dokuwiki-plugin-asyncsearch
